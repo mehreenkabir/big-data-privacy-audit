@@ -1,68 +1,86 @@
 # Big Data Privacy Audit Pipeline
 
-A distributed data pipeline using PySpark and AWS S3 to scan massive datasets for Personally Identifiable Information (PII).
+A distributed data pipeline using **PySpark** and **AWS S3** to scan massive datasets for **Personally Identifiable Information (PII)**.
+
+> Designed to showcase enterprise-grade big data and privacy engineering skills for roles at top-tier tech companies.
 
 ---
 
 ## Project Structure
-Use code with caution.
-Markdown
+
+```
 big-data-privacy-audit/
 ├── scripts/
-│ └── scan_reviews.py
+│   └── scan_reviews.py        # Spark job to scan for PII
 ├── tests/
-│ └── test_scanner_logic.py
-├── requirements.txt
-└── README.md
-Generated code
+│   └── test_scanner_logic.py # Pytest unit tests
+├── requirements.txt           # All dependencies
+└── README.md                  # Documentation you're reading
+```
+
 ---
 
 ## Usage
 
 ### Prerequisites
--   Python 3.8+
--   Java 8 or 11
--   Configured AWS Credentials
 
-### Instructions
+- Python 3.8+
+- Java 8 or 11
+- AWS CLI configured (`~/.aws/credentials`)
+- Spark installed locally or running on a cluster
 
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/mehreenkabir/big-data-privacy-audit.git
-    cd big-data-privacy-audit
-    ```
+---
 
-2.  Create and activate a virtual environment:
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+### Run the Application
 
-3.  Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+```bash
+# Clone the repository
+git clone https://github.com/mehreenkabir/big-data-privacy-audit.git
+cd big-data-privacy-audit
 
-4.  Run the application:
-    ```bash
-    python scripts/scan_reviews.py
-    ```
+# Set up virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Install requirements
+pip install -r requirements.txt
+
+# Run the PII scanner
+python scripts/scan_reviews.py
+```
 
 ---
 
 ## Run the Tests
 
-To validate the PII detection logic, run the test suite:
+To validate the `find_pii` detection logic:
 
 ```bash
 pytest
-Use code with caution.
-Expected output:
-Generated code
+```
+
+**Expected output:**
+
+```
 ========== test session starts ==========
 ...
-tests/test_scanner_logic.py ........                                     [100%]
+tests/test_scanner_logic.py ........                          [100%]
 ========== 8 passed in X.XXs ==========
-Use code with caution.
-License
-MIT License © Mehreen Kabir
+```
+
+---
+
+## Project Highlights
+
+- Distributed PII Scanning (emails, IPs) at scale
+- Reads directly from Amazon S3 (Parquet format)
+- Optimized for Big Data (PySpark UDFs, columnar formats)
+- Unit-tested core logic using `pytest`
+
+---
+
+## License
+
+MIT License © [Mehreen Kabir](https://github.com/mehreenkabir)
+
+---
